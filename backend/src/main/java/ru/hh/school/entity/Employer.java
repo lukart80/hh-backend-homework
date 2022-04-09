@@ -1,6 +1,10 @@
 package ru.hh.school.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,18 +22,23 @@ public class Employer {
     @NotNull
     private String name;
 
+
     @Column(name = "date_create")
-    private Date dateCreate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonProperty("date_create")
+    private Date dateCreate = new Date();
 
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "area_id")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Area area;
 
     private String comment;
 
     @Column(name = "views_count")
+    @JsonProperty("views_count")
     private int viewsCount;
 
     public int getId() {

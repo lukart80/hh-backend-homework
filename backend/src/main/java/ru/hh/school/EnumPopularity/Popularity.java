@@ -1,6 +1,6 @@
-package ru.hh.school.EnumCounter;
+package ru.hh.school.EnumPopularity;
 
-public enum EnumCounter {
+public enum Popularity {
     POPULAR,
     REGULAR
 }

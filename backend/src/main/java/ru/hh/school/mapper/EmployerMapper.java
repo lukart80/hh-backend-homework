@@ -1,6 +1,7 @@
 package ru.hh.school.mapper;
 
 import ru.hh.school.Dto.EmployerDto;
+import ru.hh.school.Dto.EmployerFavoriteDto;
 import ru.hh.school.Dto.EmployerIdDto;
 import ru.hh.school.entity.Employer;
 
@@ -18,8 +19,12 @@ public class EmployerMapper extends AbstractMapper{
         return super.mapItem(apiResponse, EmployerIdDto.class);
     }
 
-    public Employer mapEmployerIdDtoToEntity(EmployerIdDto employerIdDto) {
-        return mapper.convertValue(employerIdDto, Employer.class);
+    public EmployerFavoriteDto mapEmployerEntityToDto(Employer employer) {
+        return mapper.convertValue(employer, EmployerFavoriteDto.class);
+    }
+
+    public Employer mapJsonToEntity(String apiData) {
+        return super.mapItem(apiData, Employer.class);
     }
 
 }

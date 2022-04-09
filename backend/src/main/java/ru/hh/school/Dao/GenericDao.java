@@ -1,11 +1,11 @@
-package ru.hh.school.dao;
+package ru.hh.school.Dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import javax.transaction.Transactional;
 
-
+@Transactional
 public abstract class GenericDao {
 
 
@@ -16,12 +16,28 @@ public abstract class GenericDao {
         this.sessionFactory = sessionFactory;
     }
 
-    @Transactional
+
     public void save(Object object) {
         if (object == null) {
             return;
         }
         getSession().save(object);
+    }
+
+    public void update(Object object) {
+        if (object == null) {
+            return;
+        }
+
+
+        getSession().merge(object);
+    }
+
+    public void delete(Object object) {
+        if (object == null) {
+            return;
+        }
+        getSession().delete(object);
     }
 
     protected Session getSession() {

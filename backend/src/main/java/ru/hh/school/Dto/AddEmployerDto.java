@@ -1,2 +1,30 @@
-package ru.hh.school.Dto;public class AddEmployerDto {
+package ru.hh.school.Dto;
+
+public class AddEmployerDto {
+    int id;
+    String comment;
+
+    public AddEmployerDto() {
+    }
+
+    public AddEmployerDto(int id, String comment) {
+        this.id = id;
+        this.comment = comment;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }

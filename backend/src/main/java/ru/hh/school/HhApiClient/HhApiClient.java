@@ -1,4 +1,4 @@
-package ru.hh.school.hhApiClient;
+package ru.hh.school.HhApiClient;
 
 
 import javax.ws.rs.ServerErrorException;
@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class hhApiClient {
+public class HhApiClient {
 
     private final String HH_API_URL = "https://api.hh.ru";
 
