@@ -9,16 +9,22 @@ import ru.hh.school.resource.ExampleResource;
 
 @Configuration
 @Import({
-  // import your beans here
-  ExampleResource.class,
-  NabCommonConfig.class
+        // import your beans here
+        ExampleResource.class,
+        NabCommonConfig.class,
+        DaoConfig.class,
+        ServiceConfig.class,
+        ResourceConfig.class,
+        DtoConfig.class,
+        MapperConfig.class,
+        ApiClientConfig.class
 })
 public class CommonConfig {
 
-  @Bean
-  public MappingConfig mappingConfig() {
-    MappingConfig mappingConfig = new MappingConfig();
-    mappingConfig.addPackagesToScan("ru.hh.school.entity");
-    return mappingConfig;
-  }
+    @Bean
+    public MappingConfig mappingConfig() {
+        MappingConfig mappingConfig = new MappingConfig();
+        mappingConfig.addPackagesToScan("ru.hh.school.entity");
+        return mappingConfig;
+    }
 }

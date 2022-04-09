@@ -63,7 +63,7 @@
 * area
 * comment
 * **popularity** - популярность компании. Для компаний с более чем 50 просмотров выводить `POPULAR`, для остальных `REGULAR`
-* **views_count** - количество просмотро
+* **viewsCount** - количество просмотро
 
 ### Изменить информацию о избранной компании
 
@@ -97,7 +97,7 @@
 * name
 * area
 * **salary** - зарплата в том же формате, что в api hh.ru
-* created_at
+* createdAt
 * employer
 
 ### Получить вакансию
@@ -109,7 +109,7 @@
 * name
 * area
 * **salary** - зарплата в том же формате, что в api hh.ru
-* created_at
+* createdAt
 * employer
 
 ### Добавить вакансию в избранное
@@ -142,8 +142,8 @@
 * **date_create** - дата добавления в избранное
 * area
 * salary
-* created_at
+* createdAt
 * employer
 * **popularity** - та же логика, что и в компаниях
-* views_count
+* viewsCount
 * comment
